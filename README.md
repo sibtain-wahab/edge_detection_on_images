@@ -1,1 +1,1 @@
-# edge_detection_on_images
+# edge_detector_opencv_flask
