@@ -21,8 +21,26 @@ Check requirements.txt file for rest of the requirements.
     
 
 ## Installation:
+Open terminal, and go to your destination directory.
 
-Ensure you have Python 3.11.5 and pip installed.
+    cd path/to/the/folder
+
+Replace path/to/the/folder with your directory path e.g ~/Projects/edge
+
+Clone this git by copying the following in your terminal.
+
+    git clone https://github.com/sibtain-wahab/edge_detection_on_images.git
+
+Create a virtual environment in conda
+
+    conda create -n edge_env python=3.11
+    
+Replace edge_env with your custom virtual envname. Python 3.11 is required.
+
+Check if pip is installed.
+
+    pip --version
+    
 Install the required libraries:
 
     pip install -r requirements.txt
