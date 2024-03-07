@@ -1,4 +1,4 @@
-import cv2
+import cv2, base64, json
 import os
 from tempfile import mkdtemp
 
@@ -36,7 +36,17 @@ def process_image():
     output_path = os.path.join(temp_dir, 'processed_img.jpg')
     cv2.imwrite(output_path, processed_image)
 
-    return send_file(output_path, mimetype='image/jpeg', as_attachment=True, download_name='processed_img.jpg')
+    # Define json output path
+
+    json_path = os.path.join(temp_dir, 'output.json')
+
+    # Convert processed image into json
+
+    with open(output_path, "rb") as f_in, open(json_path, "w") as f_out:
+        enc_data = base64.b64encode(f_in.read()).decode("utf-8")
+        json.dump({"image": f"data:image/jpg;base64,{enc_data}"}, f_out)
+
+    return send_file(json_path, mimetype='json', as_attachment=True, download_name='output.json')
 
 
 @app.route('/')
