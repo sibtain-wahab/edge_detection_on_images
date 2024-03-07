@@ -1,4 +1,4 @@
-# Edge_detector_opencv_flask README.md
+# Edge Detector openCV Flask
 
 ## Description
 This project is a web application built with Flask that takes image input from the user, detects edges in the image, and overlays the edges on the original image, and converts it into JSON format.
